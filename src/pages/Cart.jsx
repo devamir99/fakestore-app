@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatCategory } from '../config/brand';
 import ContactCTA from '../components/ContactCTA';
+import ProductImage from '../components/ProductImage';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const Cart = () => {
@@ -69,7 +70,7 @@ const Cart = () => {
                                     to={`/product/${item.id}`}
                                     className="w-20 h-20 bg-cream-dark dark:bg-espresso rounded-lg flex items-center justify-center p-2 shrink-0"
                                 >
-                                    <img
+                                    <ProductImage
                                         src={item.image}
                                         alt={item.title}
                                         className="max-h-full max-w-full object-contain"
