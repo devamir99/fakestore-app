@@ -14,6 +14,7 @@ const Navbar = () => {
 
     const navLinks = [
         { to: '/', label: 'Shop' },
+        { to: '/about', label: 'About' },
         { to: '/favorites', label: 'Favorites', badge: favorites.length },
         { to: '/cart', label: 'Cart', badge: getCartItemsCount() },
     ];
