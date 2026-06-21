@@ -7,7 +7,7 @@ const ProductList = ({ products }) => {
             <div className="text-center py-16">
                 <div className="surface-card rounded-xl p-12 max-w-md mx-auto">
                     <svg
-                        className="w-16 h-16 text-stone-muted dark:text-latte/40 mx-auto mb-6"
+                        className="w-16 h-16 text-muted mx-auto mb-6"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -20,7 +20,7 @@ const ProductList = ({ products }) => {
                         />
                     </svg>
                     <h2 className="heading-display text-xl mb-3">No products found</h2>
-                    <p className="text-sm text-stone-muted dark:text-latte/70">
+                    <p className="text-sm text-secondary">
                         Try adjusting your filters to see more results.
                     </p>
                 </div>
