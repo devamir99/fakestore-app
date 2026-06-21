@@ -31,13 +31,9 @@ const TrustSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {brand.trust.map((item, index) => (
                     <div key={item.title} className="surface-card rounded-xl p-6">
-                        <div className="text-coffee dark:text-latte mb-4">
-                            {icons[iconKeys[index]]}
-                        </div>
-                        <h3 className="text-sm font-medium mb-2">{item.title}</h3>
-                        <p className="text-xs text-stone-muted dark:text-latte/70 leading-relaxed">
-                            {item.text}
-                        </p>
+                        <div className="text-accent mb-4">{icons[iconKeys[index]]}</div>
+                        <h3 className="text-sm font-medium mb-2 text-[var(--text-primary)]">{item.title}</h3>
+                        <p className="text-xs text-secondary leading-relaxed">{item.text}</p>
                     </div>
                 ))}
             </div>

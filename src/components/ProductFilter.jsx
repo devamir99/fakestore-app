@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ProductFilter = ({ products, onFilterChange }) => {
     const [filters, setFilters] = useState({
@@ -40,18 +40,14 @@ const ProductFilter = ({ products, onFilterChange }) => {
         onFilterChange(clearedFilters);
     };
 
-    const inputClass =
-        'w-full px-3 py-2 border border-[var(--border)] rounded-lg bg-[var(--surface)] text-[var(--text-primary)] text-sm focus:outline-none focus:ring-2 focus:ring-coffee/30 dark:focus:ring-latte/30';
-
     return (
         <div className="surface-card p-6 rounded-xl">
             <div className="flex flex-wrap items-center gap-4 mb-4">
-                <h3 className="text-sm font-medium uppercase tracking-widest text-stone-muted dark:text-latte/60">
-                    Refine
-                </h3>
+                <h3 className="label-caps">Refine</h3>
                 <button
+                    type="button"
                     onClick={clearFilters}
-                    className="text-xs text-stone-muted dark:text-latte/60 hover:text-coffee dark:hover:text-latte transition-colors"
+                    className="text-xs text-muted hover:text-accent transition-colors"
                 >
                     Clear all
                 </button>
@@ -59,22 +55,22 @@ const ProductFilter = ({ products, onFilterChange }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div>
-                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">Search</label>
+                    <label className="block text-xs text-muted mb-2">Search</label>
                     <input
                         type="text"
                         placeholder="Search products..."
                         value={filters.search}
                         onChange={(e) => handleFilterChange('search', e.target.value)}
-                        className={inputClass}
+                        className="input-field"
                     />
                 </div>
 
                 <div>
-                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">Category</label>
+                    <label className="block text-xs text-muted mb-2">Category</label>
                     <select
                         value={filters.category}
                         onChange={(e) => handleFilterChange('category', e.target.value)}
-                        className={inputClass}
+                        className="input-field"
                     >
                         {categories.map((category) => (
                             <option key={category} value={category}>
@@ -87,11 +83,11 @@ const ProductFilter = ({ products, onFilterChange }) => {
                 </div>
 
                 <div>
-                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">Price</label>
+                    <label className="block text-xs text-muted mb-2">Price</label>
                     <select
                         value={filters.priceRange}
                         onChange={(e) => handleFilterChange('priceRange', e.target.value)}
-                        className={inputClass}
+                        className="input-field"
                     >
                         {priceRanges.map((range) => (
                             <option key={range.value} value={range.value}>
@@ -102,11 +98,11 @@ const ProductFilter = ({ products, onFilterChange }) => {
                 </div>
 
                 <div>
-                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">Rating</label>
+                    <label className="block text-xs text-muted mb-2">Rating</label>
                     <select
                         value={filters.rating}
                         onChange={(e) => handleFilterChange('rating', e.target.value)}
-                        className={inputClass}
+                        className="input-field"
                     >
                         {ratings.map((rating) => (
                             <option key={rating.value} value={rating.value}>

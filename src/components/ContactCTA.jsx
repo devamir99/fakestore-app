@@ -23,13 +23,9 @@ const ContactCTA = ({ variant = 'section' }) => {
 
     return (
         <section className="surface-card rounded-2xl p-8 md:p-12 text-center">
-            <p className="text-xs uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-3">
-                Custom builds
-            </p>
-            <h2 className="heading-display text-2xl md:text-3xl text-[var(--text-primary)] mb-3">
-                {cta.headline}
-            </h2>
-            <p className="text-stone-muted dark:text-latte/70 max-w-md mx-auto mb-8 text-sm leading-relaxed">
+            <p className="label-caps mb-3">Custom builds</p>
+            <h2 className="heading-display text-2xl md:text-3xl mb-3">{cta.headline}</h2>
+            <p className="text-secondary max-w-md mx-auto mb-8 text-sm leading-relaxed">
                 {cta.subline}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
@@ -48,7 +44,7 @@ const ContactCTA = ({ variant = 'section' }) => {
                     {cta.secondary.label}
                 </a>
             </div>
-            <p className="mt-6 text-xs text-stone-muted dark:text-latte/50">
+            <p className="mt-6 text-xs text-muted">
                 {author.name} · {author.role}
             </p>
         </section>

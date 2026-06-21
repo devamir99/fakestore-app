@@ -1,4 +1,4 @@
-import React, { useContext, memo } from 'react';
+import { useContext, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { FavoritesContext } from '../context/FavoritesContext';
 import { useCart } from '../context/CartContext';
@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
 
     return (
         <div className="surface-card rounded-xl overflow-hidden flex flex-col h-full group">
-            <div className="relative aspect-square bg-cream-dark dark:bg-espresso flex items-center justify-center p-6">
+            <div className="relative aspect-square bg-subtle flex items-center justify-center p-6">
                 <Link to={`/product/${product.id}`} className="w-full h-full flex items-center justify-center">
                     <ProductImage
                         src={product.image}
@@ -58,16 +58,17 @@ const ProductCard = ({ product }) => {
                     />
                 </Link>
                 <button
+                    type="button"
                     onClick={handleFavoriteToggle}
-                    className="absolute top-3 right-3 p-2 rounded-full bg-cream/80 dark:bg-espresso-light/80 backdrop-blur-sm border border-[var(--border)] hover:border-coffee dark:hover:border-latte transition-colors"
+                    className="absolute top-3 right-3 p-2 rounded-full bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
                     aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
                 >
                     {isFavorite ? (
-                        <svg className="w-4 h-4 text-coffee dark:text-latte" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
                         </svg>
                     ) : (
-                        <svg className="w-4 h-4 text-stone-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
                     )}
@@ -76,26 +77,20 @@ const ProductCard = ({ product }) => {
 
             <div className="p-4 flex-1 flex flex-col">
                 <Link to={`/product/${product.id}`} className="flex-1">
-                    <p className="text-xs text-stone-muted dark:text-latte/60 mb-1">
-                        {formatCategory(product.category)}
-                    </p>
-                    <h2 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-coffee dark:group-hover:text-latte transition-colors">
+                    <p className="text-xs text-muted mb-1">{formatCategory(product.category)}</p>
+                    <h2 className="text-sm font-medium mb-2 line-clamp-2 text-[var(--text-primary)] group-hover:text-accent transition-colors">
                         {product.title}
                     </h2>
                 </Link>
 
                 <div className="flex items-center mb-3">
                     <div className="flex items-center gap-0.5">{renderStars(product.rating)}</div>
-                    <span className="text-xs text-stone-muted dark:text-latte/50 ml-2">
-                        ({product.rating.count})
-                    </span>
+                    <span className="text-xs text-muted ml-2">({product.rating.count})</span>
                 </div>
 
                 <div className="flex items-center justify-between mt-auto pt-2 border-t border-[var(--border)]">
-                    <span className="font-serif text-lg text-coffee dark:text-latte">
-                        ${product.price.toFixed(2)}
-                    </span>
-                    <button onClick={handleAddToCart} className="btn-primary text-xs py-2 px-3">
+                    <span className="font-serif text-lg text-accent">${product.price.toFixed(2)}</span>
+                    <button type="button" onClick={handleAddToCart} className="btn-primary text-xs py-2 px-3">
                         Add to cart
                     </button>
                 </div>
