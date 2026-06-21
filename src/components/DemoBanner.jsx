@@ -4,9 +4,12 @@ const DemoBanner = () => {
     const { demo, author, cta } = brand;
 
     return (
-        <div className="bg-coffee dark:bg-espresso-light text-cream text-sm py-2.5 px-4">
+        <div
+            className="text-sm py-2.5 px-4"
+            style={{ backgroundColor: 'var(--banner-bg)', color: 'var(--banner-text)' }}
+        >
             <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-center">
-                <span className="opacity-90">
+                <span className="opacity-95">
                     {demo.label} · {demo.message}
                 </span>
                 <span className="hidden sm:inline opacity-40">|</span>
@@ -25,7 +28,7 @@ const DemoBanner = () => {
                     >
                         {cta.secondary.label}
                     </a>
-                    <span className="hidden md:inline opacity-60 text-xs">
+                    <span className="hidden md:inline opacity-75 text-xs">
                         {author.name}
                     </span>
                 </div>
