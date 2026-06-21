@@ -8,6 +8,7 @@ import Loader from '../components/Loader';
 import Breadcrumb from '../components/Breadcrumb';
 import ContactCTA from '../components/ContactCTA';
 import ProductCard from '../components/ProductCard';
+import ProductImage from '../components/ProductImage';
 import { useToast } from '../components/Toast';
 import { usePageMeta } from '../hooks/usePageMeta';
 
@@ -92,9 +93,10 @@ const ProductDetail = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
                 <div className="surface-card rounded-xl overflow-hidden">
                     <div className="aspect-square bg-cream-dark dark:bg-espresso flex items-center justify-center p-10">
-                        <img
+                        <ProductImage
                             src={product.image}
                             alt={product.title}
+                            eager
                             className="max-h-full max-w-full object-contain"
                         />
                     </div>
