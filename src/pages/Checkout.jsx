@@ -5,6 +5,7 @@ import { formatCategory } from '../config/brand';
 import CheckoutSteps from '../components/CheckoutSteps';
 import DemoModal from '../components/DemoModal';
 import Breadcrumb from '../components/Breadcrumb';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const emptyShipping = {
     fullName: '',
@@ -20,6 +21,8 @@ const Checkout = () => {
     const [step, setStep] = useState(1);
     const [shipping, setShipping] = useState(emptyShipping);
     const [showModal, setShowModal] = useState(false);
+
+    usePageMeta({ title: 'Checkout', description: 'Complete your order — demo checkout flow.' });
 
     const subtotal = getCartTotal();
     const tax = subtotal * 0.1;
