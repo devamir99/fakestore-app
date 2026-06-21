@@ -7,6 +7,7 @@ import ProductFilter from '../components/ProductFilter';
 import ContactCTA from '../components/ContactCTA';
 import TrustSection from '../components/TrustSection';
 import Loader from '../components/Loader';
+import ProductImage from '../components/ProductImage';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const Home = () => {
@@ -115,16 +116,17 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    {featured.map((product) => (
+                    {featured.map((product, index) => (
                         <Link
                             key={product.id}
                             to={`/product/${product.id}`}
                             className="group surface-card rounded-xl overflow-hidden"
                         >
                             <div className="aspect-square bg-cream-dark dark:bg-espresso flex items-center justify-center p-8">
-                                <img
+                                <ProductImage
                                     src={product.image}
                                     alt={product.title}
+                                    eager={index === 0}
                                     className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
