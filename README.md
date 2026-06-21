@@ -1,110 +1,75 @@
-# FakeStore E-Commerce App
+# devamir — Storefront Demo
 
-A modern, responsive e-commerce application built with React and Vite, featuring a beautiful glassmorphism design with dark theme support.
+A minimal, responsive e-commerce storefront built with React and Vite. Designed as a live portfolio demo by **Amir Fallahi** — browse products, save favourites, manage a cart, and walk through a three-step checkout flow.
 
-## 🚀 Features
+**Live demo:** deploy with Vercel (see below) and set `VITE_SITE_URL` for social previews.
 
-- **Product Catalog**: Browse products from FakeStore API
-- **Product Filtering**: Filter products by category, price range, and rating
-- **Shopping Cart**: Add/remove items with quantity management
-- **Favorites System**: Save products to favorites
-- **Dark/Light Theme**: Toggle between themes with smooth transitions
-- **Glassmorphism Design**: Modern glass-like UI components
-- **Responsive Design**: Works perfectly on all device sizes
-- **Product Details**: Detailed product information with image gallery
-- **Search Functionality**: Find products quickly
-- **Smooth Animations**: Enhanced UX with Framer Motion
+## Features
 
-## 🛠️ Tech Stack
+- Product catalogue with search, category, price, and rating filters
+- Product detail pages with related items
+- Shopping cart with persistent local storage
+- Favourites / wishlist
+- Three-step checkout (front-end demo — no real payments)
+- Dark and light themes
+- Cream-and-coffee visual identity
+- Mobile-first responsive layout
 
-- **Frontend**: React 19, Vite
-- **Styling**: Tailwind CSS 4
-- **Routing**: React Router DOM
-- **Animations**: Framer Motion
-- **HTTP Client**: Axios
-- **API**: FakeStore API
+## Tech stack
 
-## 📦 Installation
+- React 19 · Vite 7 · Tailwind CSS 4
+- React Router 7
+- Local JSON product data (no external API dependency)
 
-1. Clone the repository:
+## Getting started
+
 ```bash
-git clone <repository-url>
+git clone https://github.com/devamir99/fakestore-app.git
 cd fakestore-app
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+Open [http://localhost:5173](http://localhost:5173).
 
-## 🎨 Design Features
+### Environment variables
 
-### Glassmorphism
-- Frosted glass effect on cards and modals
-- Subtle transparency with backdrop blur
-- Elegant shadows and borders
+Copy `env.example` to `.env` and optionally set:
 
-### Dark Theme
-- Smooth theme transitions
-- System preference detection
-- Persistent theme selection
+| Variable | Purpose |
+|----------|---------|
+| `VITE_SITE_URL` | Production URL for Open Graph meta tags |
 
-### Responsive Layout
-- Mobile-first design approach
-- Adaptive grid layouts
-- Touch-friendly interactions
+## Scripts
 
-## 🚀 Available Scripts
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+## Deploy to Vercel
 
-## 📱 Features Overview
+1. Push the repo to GitHub
+2. Import the project at [vercel.com](https://vercel.com)
+3. Set `VITE_SITE_URL` to your deployment URL
+4. Deploy — `vercel.json` handles client-side routing
 
-### Product Management
-- View all products in a responsive grid
-- Filter by category (electronics, clothing, etc.)
-- Sort by price, rating, or name
-- Search products by title
+```bash
+npm i -g vercel
+vercel
+```
 
-### Shopping Cart
-- Add/remove items
-- Update quantities
-- View cart total
-- Persistent cart state
+## Custom builds
 
-### User Experience
-- Loading states and error handling
-- Smooth page transitions
-- Optimized performance
-- Accessibility features
+This repository is a **demonstration storefront**. For a production-ready shop tailored to your brand, catalogue, and backend:
 
-## 🎯 Future Enhancements
+- **Phone:** [+98 920 500 7494](tel:+989205007494)
+- **LinkedIn:** [linkedin.com/in/devamir](https://www.linkedin.com/in/devamir)
+- **Email:** devamir99@gmail.com
+- **GitHub:** [github.com/devamir99](https://github.com/devamir99)
 
-- User authentication
-- Order history
-- Product reviews and ratings
-- Payment integration
-- Admin dashboard
-- Product recommendations
+## License
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📞 Support
-
-If you have any questions or need help, please open an issue on GitHub.
+MIT — see [LICENSE](LICENSE).
