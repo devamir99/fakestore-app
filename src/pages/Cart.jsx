@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatCategory } from '../config/brand';
 import ContactCTA from '../components/ContactCTA';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const Cart = () => {
+    usePageMeta({ title: 'Cart', description: 'Review items in your shopping cart.' });
     const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
 
     const subtotal = getCartTotal();
