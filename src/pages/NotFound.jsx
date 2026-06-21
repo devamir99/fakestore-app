@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import ContactCTA from '../components/ContactCTA';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const NotFound = () => {
+    usePageMeta({ title: 'Page not found', description: 'The page you requested could not be found.' });
     return (
         <div className="max-w-lg mx-auto text-center py-16 animate-fade-in">
             <div className="surface-card rounded-xl p-12 mb-12">
