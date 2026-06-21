@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FavoritesContext } from '../context/FavoritesContext';
 import { useCart } from '../context/CartContext';
 import { useToast } from './Toast';
+import ProductImage from './ProductImage';
 import { formatCategory } from '../config/brand';
 
 const ProductCard = ({ product }) => {
@@ -50,7 +51,7 @@ const ProductCard = ({ product }) => {
         <div className="surface-card rounded-xl overflow-hidden flex flex-col h-full group">
             <div className="relative aspect-square bg-cream-dark dark:bg-espresso flex items-center justify-center p-6">
                 <Link to={`/product/${product.id}`} className="w-full h-full flex items-center justify-center">
-                    <img
+                    <ProductImage
                         src={product.image}
                         alt={product.title}
                         className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
