@@ -4,6 +4,44 @@ A minimal, responsive e-commerce storefront built with React and Vite. Designed 
 
 **Live demo:** deploy with Vercel (see below) and set `VITE_SITE_URL` for social previews.
 
+## Screenshots
+
+### Home — dark & light
+
+<p align="center">
+  <img src="docs/screenshots/home-dark.png" alt="devamir home page in dark mode" width="720" />
+</p>
+
+<p align="center">
+  <em>Home page · dark theme</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/home-light.png" alt="devamir home page in light mode" width="720" />
+</p>
+
+<p align="center">
+  <em>Home page · light theme</em>
+</p>
+
+### Product detail — dark & light
+
+<p align="center">
+  <img src="docs/screenshots/product-dark.png" alt="devamir product detail page in dark mode" width="720" />
+</p>
+
+<p align="center">
+  <em>Product detail · dark theme</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/product-light.png" alt="devamir product detail page in light mode" width="720" />
+</p>
+
+<p align="center">
+  <em>Product detail · light theme</em>
+</p>
+
 ## Features
 
 - Product catalogue with search, category, price, and rating filters
