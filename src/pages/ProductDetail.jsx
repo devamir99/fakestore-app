@@ -9,6 +9,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import ContactCTA from '../components/ContactCTA';
 import ProductCard from '../components/ProductCard';
 import { useToast } from '../components/Toast';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const ProductDetail = () => {
     const { id } = useParams();
@@ -21,6 +22,11 @@ const ProductDetail = () => {
     const { addToCart } = useCart();
     const { addToast } = useToast();
     const isFavorite = favorites.some((p) => p.id === Number(id));
+
+    usePageMeta({
+        title: product?.title,
+        description: product?.description?.slice(0, 155),
+    });
 
     useEffect(() => {
         const fetchProduct = async () => {
