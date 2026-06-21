@@ -69,7 +69,7 @@ const ProductDetail = () => {
             <div className="max-w-lg mx-auto text-center py-20">
                 <div className="surface-card rounded-xl p-12">
                     <h2 className="heading-display text-2xl mb-4">Product not found</h2>
-                    <p className="text-sm text-stone-muted dark:text-latte/70 mb-8">
+                    <p className="text-sm text-secondary mb-8">
                         This item may have been removed or the link is incorrect.
                     </p>
                     <Link to="/" className="btn-primary">
@@ -92,7 +92,7 @@ const ProductDetail = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
                 <div className="surface-card rounded-xl overflow-hidden">
-                    <div className="aspect-square bg-cream-dark dark:bg-espresso flex items-center justify-center p-10">
+                    <div className="aspect-square bg-subtle flex items-center justify-center p-10">
                         <ProductImage
                             src={product.image}
                             alt={product.title}
@@ -103,33 +103,33 @@ const ProductDetail = () => {
                 </div>
 
                 <div className="flex flex-col">
-                    <p className="text-xs uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-3">
+                    <p className="text-xs uppercase tracking-widest text-muted mb-3">
                         {formatCategory(product.category)}
                     </p>
                     <h1 className="heading-display text-3xl md:text-4xl mb-4">{product.title}</h1>
 
                     <div className="flex items-center gap-3 mb-6">
                         <div className="flex items-center gap-0.5">{renderStars(product.rating)}</div>
-                        <span className="text-sm text-stone-muted dark:text-latte/60">
+                        <span className="text-sm text-muted">
                             {product.rating.rate} · {product.rating.count} reviews
                         </span>
                     </div>
 
-                    <p className="font-serif text-3xl text-coffee dark:text-latte mb-6">
+                    <p className="font-serif text-3xl text-accent mb-6">
                         ${product.price.toFixed(2)}
                     </p>
 
-                    <p className="text-sm text-stone-muted dark:text-latte/70 leading-relaxed mb-8">
+                    <p className="text-sm text-secondary leading-relaxed mb-8">
                         {product.description}
                     </p>
 
                     <div className="flex items-center gap-4 mb-8">
-                        <span className="text-sm text-stone-muted dark:text-latte/60">Quantity</span>
+                        <span className="text-sm text-muted">Quantity</span>
                         <div className="flex items-center gap-3">
                             <button
                                 type="button"
                                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                                className="w-9 h-9 rounded-full border border-[var(--border)] hover:border-coffee dark:hover:border-latte flex items-center justify-center transition-colors"
+                                className="w-9 h-9 rounded-full border border-[var(--border)] hover:border-[var(--accent)] flex items-center justify-center transition-colors"
                                 aria-label="Decrease quantity"
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ const ProductDetail = () => {
                             <button
                                 type="button"
                                 onClick={() => setQuantity(quantity + 1)}
-                                className="w-9 h-9 rounded-full border border-[var(--border)] hover:border-coffee dark:hover:border-latte flex items-center justify-center transition-colors"
+                                className="w-9 h-9 rounded-full border border-[var(--border)] hover:border-[var(--accent)] flex items-center justify-center transition-colors"
                                 aria-label="Increase quantity"
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,7 +169,7 @@ const ProductDetail = () => {
 
             {related.length > 0 && (
                 <section className="mt-20">
-                    <p className="text-xs uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-2">
+                    <p className="text-xs uppercase tracking-widest text-muted mb-2">
                         You may also like
                     </p>
                     <h2 className="heading-display text-2xl mb-8">Related pieces</h2>

@@ -31,7 +31,7 @@ function App() {
                             <Router>
                                 <SkipLink />
                                 <ScrollToTop />
-                                <div className="min-h-screen flex flex-col bg-cream dark:bg-espresso transition-colors duration-300">
+                                <div className="min-h-screen flex flex-col bg-page transition-colors duration-300">
                                     <DemoBanner />
                                     <Navbar />
                                     <main

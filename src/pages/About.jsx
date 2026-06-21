@@ -13,15 +13,15 @@ const About = () => {
 
     return (
         <div className="max-w-3xl mx-auto animate-fade-in">
-            <p className="text-xs uppercase tracking-[0.2em] text-stone-muted dark:text-latte/60 mb-4">
+            <p className="label-caps mb-4">
                 About {brand.name}
             </p>
             <h1 className="heading-display text-4xl md:text-5xl mb-6">{about.title}</h1>
-            <p className="text-base md:text-lg text-stone-muted dark:text-latte/70 leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-secondary leading-relaxed mb-8">
                 {about.intro}
             </p>
 
-            <div className="space-y-6 text-sm text-stone-muted dark:text-latte/70 leading-relaxed mb-16">
+            <div className="space-y-6 text-sm text-secondary leading-relaxed mb-16">
                 {about.story.map((paragraph) => (
                     <p key={paragraph.slice(0, 32)}>{paragraph}</p>
                 ))}
@@ -33,7 +33,7 @@ const About = () => {
                     {about.values.map((value) => (
                         <div key={value.title} className="surface-card rounded-xl p-6">
                             <h3 className="text-sm font-medium mb-2">{value.title}</h3>
-                            <p className="text-xs text-stone-muted dark:text-latte/70 leading-relaxed">
+                            <p className="text-xs text-secondary leading-relaxed">
                                 {value.text}
                             </p>
                         </div>
@@ -42,11 +42,11 @@ const About = () => {
             </section>
 
             <section className="surface-card rounded-xl p-8 mb-16">
-                <p className="text-xs uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-3">
+                <p className="text-xs uppercase tracking-widest text-muted mb-3">
                     Behind the build
                 </p>
                 <h2 className="heading-display text-xl mb-3">{author.name}</h2>
-                <p className="text-sm text-stone-muted dark:text-latte/70 leading-relaxed mb-6">
+                <p className="text-sm text-secondary leading-relaxed mb-6">
                     {author.role} crafting front-end experiences with attention to layout, performance,
                     and detail. This demo is part of a portfolio of interactive storefront concepts —
                     available to adapt for your products, brand, and customers.

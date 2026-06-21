@@ -40,8 +40,7 @@ const Checkout = () => {
         return null;
     }
 
-    const inputClass =
-        'w-full px-3 py-2.5 border border-[var(--border)] rounded-lg bg-[var(--surface)] text-[var(--text-primary)] text-sm focus:outline-none focus:ring-2 focus:ring-coffee/30 dark:focus:ring-latte/30';
+    const inputClass = 'input-field';
 
     const handleShippingChange = (field) => (e) => {
         setShipping((prev) => ({ ...prev, [field]: e.target.value }));
@@ -70,7 +69,7 @@ const Checkout = () => {
 
             <div className="mb-8">
                 <h1 className="heading-display text-3xl md:text-4xl mb-2">Checkout</h1>
-                <p className="text-sm text-stone-muted dark:text-latte/60">
+                <p className="text-sm text-muted">
                     {itemCount} {itemCount === 1 ? 'item' : 'items'} · ${total.toFixed(2)} total
                 </p>
             </div>
@@ -81,12 +80,12 @@ const Checkout = () => {
                 <div className="lg:col-span-2">
                     {step === 1 && (
                         <div className="surface-card rounded-xl p-6 md:p-8 space-y-5">
-                            <h2 className="text-sm font-medium uppercase tracking-widest text-stone-muted dark:text-latte/60">
+                            <h2 className="text-sm font-medium uppercase tracking-widest text-muted">
                                 Shipping details
                             </h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="sm:col-span-2">
-                                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">
+                                    <label className="block text-xs text-muted mb-2">
                                         Full name
                                     </label>
                                     <input
@@ -98,7 +97,7 @@ const Checkout = () => {
                                     />
                                 </div>
                                 <div className="sm:col-span-2">
-                                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">
+                                    <label className="block text-xs text-muted mb-2">
                                         Email
                                     </label>
                                     <input
@@ -110,7 +109,7 @@ const Checkout = () => {
                                     />
                                 </div>
                                 <div className="sm:col-span-2">
-                                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">
+                                    <label className="block text-xs text-muted mb-2">
                                         Address
                                     </label>
                                     <input
@@ -122,7 +121,7 @@ const Checkout = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">
+                                    <label className="block text-xs text-muted mb-2">
                                         City
                                     </label>
                                     <input
@@ -134,7 +133,7 @@ const Checkout = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">
+                                    <label className="block text-xs text-muted mb-2">
                                         Postal code
                                     </label>
                                     <input
@@ -165,7 +164,7 @@ const Checkout = () => {
                     {step === 2 && (
                         <div className="space-y-6">
                             <div className="surface-card rounded-xl p-6 md:p-8">
-                                <h2 className="text-sm font-medium uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-4">
+                                <h2 className="text-sm font-medium uppercase tracking-widest text-muted mb-4">
                                     Order review
                                 </h2>
                                 <div className="space-y-4">
@@ -174,7 +173,7 @@ const Checkout = () => {
                                             key={item.id}
                                             className="flex items-center gap-4 pb-4 border-b border-[var(--border)] last:border-0 last:pb-0"
                                         >
-                                            <div className="w-16 h-16 bg-cream-dark dark:bg-espresso rounded-lg flex items-center justify-center p-2 shrink-0">
+                                            <div className="w-16 h-16 bg-subtle rounded-lg flex items-center justify-center p-2 shrink-0">
                                                 <ProductImage
                                                     src={item.image}
                                                     alt={item.title}
@@ -183,11 +182,11 @@ const Checkout = () => {
                                             </div>
                                             <div className="flex-1 min-w-0">
                                                 <p className="text-sm font-medium line-clamp-1">{item.title}</p>
-                                                <p className="text-xs text-stone-muted dark:text-latte/60">
+                                                <p className="text-xs text-muted">
                                                     Qty {item.quantity} · {formatCategory(item.category)}
                                                 </p>
                                             </div>
-                                            <p className="font-serif text-coffee dark:text-latte shrink-0">
+                                            <p className="font-serif text-accent shrink-0">
                                                 ${(item.price * item.quantity).toFixed(2)}
                                             </p>
                                         </div>
@@ -196,7 +195,7 @@ const Checkout = () => {
                             </div>
 
                             <div className="surface-card rounded-xl p-6 md:p-8">
-                                <h2 className="text-sm font-medium uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-4">
+                                <h2 className="text-sm font-medium uppercase tracking-widest text-muted mb-4">
                                     Delivery address
                                 </h2>
                                 <p className="text-sm leading-relaxed">
@@ -223,16 +222,16 @@ const Checkout = () => {
 
                     {step === 3 && (
                         <div className="surface-card rounded-xl p-6 md:p-8 space-y-5">
-                            <h2 className="text-sm font-medium uppercase tracking-widest text-stone-muted dark:text-latte/60">
+                            <h2 className="text-sm font-medium uppercase tracking-widest text-muted">
                                 Payment method
                             </h2>
-                            <p className="text-sm text-stone-muted dark:text-latte/70 leading-relaxed">
+                            <p className="text-sm text-secondary leading-relaxed">
                                 Payment fields are shown for layout demonstration only. No card data is collected or
                                 transmitted.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="sm:col-span-2">
-                                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">
+                                    <label className="block text-xs text-muted mb-2">
                                         Card number
                                     </label>
                                     <input
@@ -243,13 +242,13 @@ const Checkout = () => {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">
+                                    <label className="block text-xs text-muted mb-2">
                                         Expiry
                                     </label>
                                     <input type="text" placeholder="MM / YY" className={inputClass} readOnly />
                                 </div>
                                 <div>
-                                    <label className="block text-xs text-stone-muted dark:text-latte/60 mb-2">
+                                    <label className="block text-xs text-muted mb-2">
                                         CVC
                                     </label>
                                     <input type="text" placeholder="123" className={inputClass} readOnly />
@@ -269,24 +268,24 @@ const Checkout = () => {
 
                 <div className="lg:col-span-1">
                     <div className="surface-card rounded-xl p-6 sticky top-28">
-                        <h2 className="text-sm font-medium uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-4">
+                        <h2 className="text-sm font-medium uppercase tracking-widest text-muted mb-4">
                             Summary
                         </h2>
                         <div className="space-y-3 text-sm">
-                            <div className="flex justify-between text-stone-muted dark:text-latte/70">
+                            <div className="flex justify-between text-secondary">
                                 <span>Subtotal</span>
                                 <span>${subtotal.toFixed(2)}</span>
                             </div>
-                            <div className="flex justify-between text-stone-muted dark:text-latte/70">
+                            <div className="flex justify-between text-secondary">
                                 <span>Shipping</span>
                                 <span>Free</span>
                             </div>
-                            <div className="flex justify-between text-stone-muted dark:text-latte/70">
+                            <div className="flex justify-between text-secondary">
                                 <span>Tax</span>
                                 <span>${tax.toFixed(2)}</span>
                             </div>
                             <hr className="border-[var(--border)]" />
-                            <div className="flex justify-between font-serif text-lg text-coffee dark:text-latte">
+                            <div className="flex justify-between font-serif text-lg text-accent">
                                 <span>Total</span>
                                 <span>${total.toFixed(2)}</span>
                             </div>
