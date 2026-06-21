@@ -14,7 +14,7 @@ const Favorites = () => {
             <div className="max-w-lg mx-auto text-center py-16 animate-fade-in">
                 <div className="surface-card rounded-xl p-12">
                     <svg
-                        className="w-16 h-16 text-stone-muted dark:text-latte/40 mx-auto mb-6"
+                        className="w-16 h-16 text-muted mx-auto mb-6"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -27,7 +27,7 @@ const Favorites = () => {
                         />
                     </svg>
                     <h2 className="heading-display text-2xl mb-3">No saved items yet</h2>
-                    <p className="text-sm text-stone-muted dark:text-latte/70 mb-8">
+                    <p className="text-sm text-secondary mb-8">
                         Tap the heart on any product to keep it here for later.
                     </p>
                     <Link to="/" className="btn-primary">
@@ -43,7 +43,7 @@ const Favorites = () => {
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
                 <div>
                     <h1 className="heading-display text-3xl md:text-4xl mb-2">Saved items</h1>
-                    <p className="text-sm text-stone-muted dark:text-latte/60">
+                    <p className="text-sm text-muted">
                         {favorites.length} {favorites.length === 1 ? 'piece' : 'pieces'}
                     </p>
                 </div>
