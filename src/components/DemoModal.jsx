@@ -31,7 +31,7 @@ const DemoModal = ({ isOpen, onClose, title, message }) => {
         >
             <button
                 type="button"
-                className="absolute inset-0 bg-espresso/50 dark:bg-black/60 backdrop-blur-sm"
+                className="absolute inset-0 bg-black/40 backdrop-blur-sm"
                 onClick={onClose}
                 aria-label="Close dialog"
             />
@@ -40,7 +40,7 @@ const DemoModal = ({ isOpen, onClose, title, message }) => {
                 <button
                     type="button"
                     onClick={onClose}
-                    className="absolute top-4 right-4 p-1 text-stone-muted hover:text-coffee dark:hover:text-latte transition-colors"
+                    className="absolute top-4 right-4 p-1 text-muted hover:text-accent transition-colors"
                     aria-label="Close"
                 >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,13 +48,13 @@ const DemoModal = ({ isOpen, onClose, title, message }) => {
                     </svg>
                 </button>
 
-                <p className="text-xs uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-3">
+                <p className="text-xs uppercase tracking-widest text-muted mb-3">
                     {demo.label}
                 </p>
                 <h2 id="demo-modal-title" className="heading-display text-2xl mb-3 pr-6">
                     {title ?? demo.checkoutTitle}
                 </h2>
-                <p className="text-sm text-stone-muted dark:text-latte/70 leading-relaxed mb-8">
+                <p className="text-sm text-secondary leading-relaxed mb-8">
                     {message ?? demo.checkoutMessage}
                 </p>
 
@@ -75,7 +75,7 @@ const DemoModal = ({ isOpen, onClose, title, message }) => {
                     </button>
                 </div>
 
-                <p className="mt-6 text-center text-xs text-stone-muted dark:text-latte/50">
+                <p className="mt-6 text-center text-xs text-muted">
                     {author.name} · {author.role}
                 </p>
             </div>

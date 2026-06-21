@@ -24,7 +24,8 @@ const BackToTop = () => {
         <button
             type="button"
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-coffee dark:bg-latte text-cream dark:text-espresso shadow-lg hover:opacity-90 transition-opacity"
+            className="fixed bottom-6 right-6 z-40 p-3 rounded-full shadow-lg hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: 'var(--accent)', color: 'var(--on-accent)' }}
             aria-label="Back to top"
         >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

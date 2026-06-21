@@ -4,22 +4,28 @@ const steps = [
     { id: 3, label: 'Payment' },
 ];
 
+const stepActiveStyle = {
+    backgroundColor: 'var(--accent)',
+    color: 'var(--on-accent)',
+    borderColor: 'var(--accent)',
+};
+
 const CheckoutSteps = ({ currentStep }) => {
     return (
         <ol className="flex items-center justify-center gap-2 sm:gap-4 mb-10">
             {steps.map((step, index) => {
                 const isComplete = currentStep > step.id;
                 const isCurrent = currentStep === step.id;
+                const isActive = isComplete || isCurrent;
 
                 return (
                     <li key={step.id} className="flex items-center gap-2 sm:gap-4">
                         <div className="flex items-center gap-2">
                             <span
                                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium border transition-colors ${
-                                    isComplete || isCurrent
-                                        ? 'bg-coffee dark:bg-latte text-cream dark:text-espresso border-coffee dark:border-latte'
-                                        : 'border-[var(--border)] text-stone-muted dark:text-latte/50'
+                                    isActive ? '' : 'border-[var(--border)] text-muted'
                                 }`}
+                                style={isActive ? stepActiveStyle : undefined}
                             >
                                 {isComplete ? (
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,9 +37,7 @@ const CheckoutSteps = ({ currentStep }) => {
                             </span>
                             <span
                                 className={`hidden sm:inline text-sm ${
-                                    isCurrent
-                                        ? 'text-coffee dark:text-latte font-medium'
-                                        : 'text-stone-muted dark:text-latte/60'
+                                    isCurrent ? 'text-accent font-medium' : 'text-muted'
                                 }`}
                             >
                                 {step.label}
@@ -41,9 +45,10 @@ const CheckoutSteps = ({ currentStep }) => {
                         </div>
                         {index < steps.length - 1 && (
                             <span
-                                className={`w-8 sm:w-12 h-px ${
-                                    isComplete ? 'bg-coffee dark:bg-latte' : 'bg-[var(--border)]'
-                                }`}
+                                className="w-8 sm:w-12 h-px"
+                                style={{
+                                    backgroundColor: isComplete ? 'var(--accent)' : 'var(--border)',
+                                }}
                                 aria-hidden="true"
                             />
                         )}

@@ -45,10 +45,10 @@ const ToastContainer = ({ toasts, removeToast }) => {
 };
 
 const toastStyles = {
-    success: 'border-coffee/20 dark:border-latte/30 bg-cream dark:bg-espresso-light text-[var(--text-primary)]',
-    error: 'border-red-300/50 dark:border-red-500/30 bg-red-50 dark:bg-red-950/40 text-red-900 dark:text-red-200',
-    warning: 'border-caramel/40 bg-cream-dark dark:bg-espresso-light text-[var(--text-primary)]',
-    info: 'border-[var(--border)] bg-[var(--surface)] text-[var(--text-primary)]',
+    success: 'border-[var(--border)] bg-[var(--surface)]',
+    error: 'border-red-400/40 bg-red-50 dark:bg-red-950/50 text-red-900 dark:text-red-100',
+    warning: 'border-caramel/50 bg-[var(--surface-muted)]',
+    info: 'border-[var(--border)] bg-[var(--surface)]',
 };
 
 const Toast = ({ toast, onRemove }) => {
@@ -64,7 +64,7 @@ const Toast = ({ toast, onRemove }) => {
                 <button
                     type="button"
                     onClick={() => onRemove(toast.id)}
-                    className="shrink-0 p-0.5 text-stone-muted hover:text-coffee dark:hover:text-latte transition-colors"
+                    className="shrink-0 p-0.5 text-muted hover:text-accent transition-colors"
                     aria-label="Dismiss notification"
                 >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
