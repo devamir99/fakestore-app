@@ -1,24 +1,20 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import ContactCTA from '../components/ContactCTA';
 
 const NotFound = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
-            <div className="glass-card dark:glass-card-dark rounded-xl p-12 max-w-md mx-auto">
-                <div className="text-8xl font-bold gradient-text mb-6">404</div>
-                <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-                    Page Not Found
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 mb-8">
-                    Sorry, the page you are looking for does not exist or has been moved.
+        <div className="max-w-lg mx-auto text-center py-16 animate-fade-in">
+            <div className="surface-card rounded-xl p-12 mb-12">
+                <p className="font-serif text-7xl text-coffee dark:text-latte mb-4">404</p>
+                <h1 className="heading-display text-2xl mb-3">Page not found</h1>
+                <p className="text-sm text-stone-muted dark:text-latte/70 mb-8">
+                    The page you are looking for does not exist or has been moved.
                 </p>
-                <Link
-                    to="/"
-                    className="inline-block py-3 px-6 bg-blue-500 hover:bg-blue-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white rounded-lg transition-colors duration-300"
-                >
-                    Go Back Home
+                <Link to="/" className="btn-primary">
+                    Back to shop
                 </Link>
             </div>
+            <ContactCTA variant="compact" />
         </div>
     );
 };
