@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback } from 'react';
 
 const ToastContext = createContext();
 
@@ -8,16 +8,16 @@ export const ToastProvider = ({ children }) => {
     const addToast = useCallback((message, type = 'info', duration = 3000) => {
         const id = Date.now();
         const toast = { id, message, type, duration };
-        
-        setToasts(prev => [...prev, toast]);
-        
+
+        setToasts((prev) => [...prev, toast]);
+
         setTimeout(() => {
-            setToasts(prev => prev.filter(toast => toast.id !== id));
+            setToasts((prev) => prev.filter((t) => t.id !== id));
         }, duration);
     }, []);
 
     const removeToast = useCallback((id) => {
-        setToasts(prev => prev.filter(toast => toast.id !== id));
+        setToasts((prev) => prev.filter((t) => t.id !== id));
     }, []);
 
     return (
@@ -30,35 +30,42 @@ export const ToastProvider = ({ children }) => {
 
 const ToastContainer = ({ toasts, removeToast }) => {
     return (
-        <div className="fixed top-4 right-4 z-50 space-y-2">
-            {toasts.map(toast => (
-                <Toast key={toast.id} toast={toast} onRemove={removeToast} />
+        <div
+            className="fixed top-20 right-4 z-[60] space-y-2 max-w-sm w-full pointer-events-none"
+            aria-live="polite"
+            aria-relevant="additions"
+        >
+            {toasts.map((toast) => (
+                <div key={toast.id} className="pointer-events-auto">
+                    <Toast toast={toast} onRemove={removeToast} />
+                </div>
             ))}
         </div>
     );
 };
 
+const toastStyles = {
+    success: 'border-coffee/20 dark:border-latte/30 bg-cream dark:bg-espresso-light text-[var(--text-primary)]',
+    error: 'border-red-300/50 dark:border-red-500/30 bg-red-50 dark:bg-red-950/40 text-red-900 dark:text-red-200',
+    warning: 'border-caramel/40 bg-cream-dark dark:bg-espresso-light text-[var(--text-primary)]',
+    info: 'border-[var(--border)] bg-[var(--surface)] text-[var(--text-primary)]',
+};
+
 const Toast = ({ toast, onRemove }) => {
-    const getToastStyles = (type) => {
-        switch (type) {
-            case 'success':
-                return 'bg-green-500 text-white';
-            case 'error':
-                return 'bg-red-500 text-white';
-            case 'warning':
-                return 'bg-yellow-500 text-white';
-            default:
-                return 'bg-blue-500 text-white';
-        }
-    };
+    const style = toastStyles[toast.type] ?? toastStyles.info;
 
     return (
-        <div className={`glass-card dark:glass-card-dark rounded-lg p-4 shadow-lg animate-slide-up ${getToastStyles(toast.type)}`}>
-            <div className="flex items-center justify-between">
-                <span className="font-medium">{toast.message}</span>
+        <div
+            role="status"
+            className={`surface-card rounded-lg px-4 py-3 shadow-md animate-slide-up border ${style}`}
+        >
+            <div className="flex items-start justify-between gap-3">
+                <span className="text-sm font-medium leading-snug">{toast.message}</span>
                 <button
+                    type="button"
                     onClick={() => onRemove(toast.id)}
-                    className="ml-4 text-white hover:text-gray-200 transition-colors"
+                    className="shrink-0 p-0.5 text-stone-muted hover:text-coffee dark:hover:text-latte transition-colors"
+                    aria-label="Dismiss notification"
                 >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
