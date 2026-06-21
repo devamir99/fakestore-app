@@ -79,18 +79,18 @@ const Home = () => {
 
     return (
         <div className="space-y-16 animate-fade-in">
-            <section className="pt-8 pb-4 md:pt-16">
-                <div className="max-w-2xl">
-                    <p className="text-xs uppercase tracking-[0.2em] text-stone-muted dark:text-latte/60 mb-4">
-                        {brand.demo.label}
-                    </p>
-                    <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl text-[var(--text-primary)] mb-5">
+            {/* Hero — centered */}
+            <section className="relative pt-10 pb-6 md:pt-16 md:pb-10 text-center">
+                <div className="absolute inset-0 -mx-4 sm:-mx-6 lg:-mx-8 bg-subtle rounded-2xl opacity-60 pointer-events-none" aria-hidden="true" />
+                <div className="relative max-w-3xl mx-auto px-4">
+                    <p className="label-caps mb-4">{brand.demo.label}</p>
+                    <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl mb-5">
                         {brand.tagline}
                     </h1>
-                    <p className="text-stone-muted dark:text-latte/70 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
+                    <p className="text-secondary text-base md:text-lg leading-relaxed mb-8 max-w-xl mx-auto">
                         {brand.description}
                     </p>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-3 justify-center">
                         <a href="#catalog" className="btn-primary">
                             Browse collection
                         </a>
@@ -107,22 +107,18 @@ const Home = () => {
             </section>
 
             <section>
-                <div className="flex items-end justify-between mb-8">
-                    <div>
-                        <p className="text-xs uppercase tracking-widest text-stone-muted dark:text-latte/60 mb-2">
-                            Selected
-                        </p>
-                        <h2 className="heading-display text-2xl md:text-3xl">Featured pieces</h2>
-                    </div>
+                <div className="text-center mb-8">
+                    <p className="label-caps mb-2">Selected</p>
+                    <h2 className="heading-display text-2xl md:text-3xl">Featured pieces</h2>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     {featured.map((product, index) => (
                         <Link
                             key={product.id}
                             to={`/product/${product.id}`}
                             className="group surface-card rounded-xl overflow-hidden"
                         >
-                            <div className="aspect-square bg-cream-dark dark:bg-espresso flex items-center justify-center p-8">
+                            <div className="aspect-square bg-subtle flex items-center justify-center p-8">
                                 <ProductImage
                                     src={product.image}
                                     alt={product.title}
@@ -131,13 +127,13 @@ const Home = () => {
                                 />
                             </div>
                             <div className="p-4">
-                                <p className="text-xs text-stone-muted dark:text-latte/60 mb-1">
+                                <p className="text-xs text-muted mb-1">
                                     {formatCategory(product.category)}
                                 </p>
-                                <h3 className="text-sm font-medium line-clamp-2 group-hover:text-coffee dark:group-hover:text-latte transition-colors">
+                                <h3 className="text-sm font-medium line-clamp-2 group-hover:text-accent transition-colors">
                                     {product.title}
                                 </h3>
-                                <p className="mt-2 font-serif text-lg text-coffee dark:text-latte">
+                                <p className="mt-2 font-serif text-lg text-accent">
                                     ${product.price.toFixed(2)}
                                 </p>
                             </div>
@@ -149,15 +145,14 @@ const Home = () => {
             <TrustSection />
 
             <section id="catalog" className="scroll-mt-24">
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-2 mb-8 justify-center">
                     {categories.map((category) => (
                         <button
                             key={category}
+                            type="button"
                             onClick={() => handleCategoryPill(category)}
                             className={`px-4 py-1.5 rounded-full text-sm transition-colors ${
-                                activeCategory === category
-                                    ? 'bg-coffee dark:bg-latte text-cream dark:text-espresso'
-                                    : 'border border-[var(--border)] text-stone-muted dark:text-latte/70 hover:border-coffee dark:hover:border-latte'
+                                activeCategory === category ? 'pill-active' : 'pill-inactive'
                             }`}
                         >
                             {category === 'all' ? 'All' : formatCategory(category)}
@@ -170,7 +165,7 @@ const Home = () => {
                 <div className="flex justify-between items-center mb-6 mt-8">
                     <h2 className="heading-display text-xl md:text-2xl">
                         Collection
-                        <span className="text-stone-muted dark:text-latte/50 font-sans text-base ml-2">
+                        <span className="text-muted font-sans text-base ml-2">
                             ({filteredProducts.length})
                         </span>
                     </h2>
