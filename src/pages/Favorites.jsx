@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { FavoritesContext } from '../context/FavoritesContext';
 import ProductCard from '../components/ProductCard';
 import ContactCTA from '../components/ContactCTA';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const Favorites = () => {
+    usePageMeta({ title: 'Favorites', description: 'Your saved items at devamir.' });
     const { favorites } = useContext(FavoritesContext);
 
     if (favorites.length === 0) {
