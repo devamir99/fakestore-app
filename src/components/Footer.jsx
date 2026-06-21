@@ -25,6 +25,9 @@ const Footer = () => {
                             <Link to="/" className="hover:text-coffee dark:hover:text-latte transition-colors">
                                 Shop
                             </Link>
+                            <Link to="/about" className="hover:text-coffee dark:hover:text-latte transition-colors">
+                                About
+                            </Link>
                             <Link to="/favorites" className="hover:text-coffee dark:hover:text-latte transition-colors">
                                 Favorites
                             </Link>
