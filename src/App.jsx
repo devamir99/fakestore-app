@@ -12,6 +12,7 @@ import ProductDetail from './pages/ProductDetail';
 import Favorites from './pages/Favorites';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import About from './pages/About';
 import NotFound from './pages/NotFound';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
@@ -35,6 +36,7 @@ function App() {
                                             <Route path="/favorites" element={<Favorites />} />
                                             <Route path="/cart" element={<Cart />} />
                                             <Route path="/checkout" element={<Checkout />} />
+                                            <Route path="/about" element={<About />} />
                                             <Route path="/" element={<Home />} />
                                             <Route path="*" element={<NotFound />} />
                                         </Routes>
