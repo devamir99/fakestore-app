@@ -1,79 +1,43 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2024-01-XX
+## [1.0.0] - 2026-06-21
 
 ### Added
-- 🎨 **Glassmorphism Design System**: Modern glass-like UI with backdrop blur effects
-- 🌙 **Dark/Light Theme Toggle**: Automatic theme detection with smooth transitions
-- 🛒 **Shopping Cart Functionality**: Add/remove items with quantity management
-- 🔍 **Advanced Product Filtering**: Filter by category, price range, rating, and search
-- ❤️ **Favorites System**: Save and manage favorite products
-- 📱 **Responsive Design**: Mobile-first approach with adaptive layouts
-- ⚡ **Performance Optimizations**: React.memo, lazy loading, and optimized re-renders
-- 🎯 **Toast Notifications**: User feedback for actions
-- 🔝 **Back to Top Button**: Smooth scrolling navigation
-- 🛡️ **Error Boundary**: Graceful error handling
-- 📊 **Star Rating Display**: Visual product ratings
-- 🎨 **Gradient Text Effects**: Beautiful typography
-- 🎭 **Smooth Animations**: Enhanced user experience with Framer Motion
-- 💾 **Local Storage Persistence**: Cart and favorites persist across sessions
 
-### Enhanced
-- 🎨 **Modern UI/UX**: Complete redesign with glassmorphism aesthetics
-- 🚀 **Performance**: Optimized bundle size and loading times
-- 📱 **Mobile Experience**: Improved touch interactions and responsive design
-- 🎯 **Accessibility**: Better keyboard navigation and screen reader support
-- 🔧 **Developer Experience**: Better code organization and documentation
+- **devamir brand** — cream-and-coffee visual identity with Playfair Display and DM Sans typography
+- **Local product catalogue** — offline-friendly JSON snapshot (no live API dependency)
+- **Storefront pages** — Shop, Product Detail, Cart, Favorites, Checkout, About, 404
+- **Three-step checkout** — shipping, review, and payment UI with demo completion modal
+- **Contact CTAs** — phone and LinkedIn prioritized across banner, footer, and dedicated sections
+- **Dark / light theme** — system preference detection with persistent toggle
+- **Trust section** — shipping, checkout, responsive, and support highlights on home page
+- **SEO** — dynamic page meta, Open Graph tags, favicon, and social cover image
+- **Deploy config** — Vercel SPA rewrites via `vercel.json`
+- **Route-level code splitting** — lazy-loaded pages with Suspense fallback
+- **ProductImage component** — lazy loading with eager priority for above-the-fold images
+- **Skip link** — keyboard navigation to main content
+- **Accessibility** — focus-visible styles and reduced-motion support
 
-### Technical Improvements
-- ⚛️ **React 19**: Latest React features and optimizations
-- 🎨 **Tailwind CSS 4**: Modern utility-first styling
-- 🏗️ **Vite**: Fast build tool and development server
-- 📦 **Context API**: Centralized state management
-- 🎯 **Custom Hooks**: Reusable logic extraction
-- 🛡️ **Error Handling**: Comprehensive error boundaries
-- 📱 **PWA Ready**: Service worker and manifest ready
+### Changed
 
-### Fixed
-- 🐛 **Product Card Layout**: Fixed text overflow and spacing issues
-- 🐛 **Navigation**: Improved routing and page transitions
-- 🐛 **Theme Persistence**: Fixed theme not persisting across sessions
-- 🐛 **Cart State**: Fixed cart items not persisting properly
+- Replaced glassmorphism UI with minimal surface-card layout
+- Restyled toast notifications, error boundary, and back-to-top button
+- Rewrote README for accurate demo scope and deployment instructions
 
-## [0.0.0] - Initial Release
+### Removed
+
+- Live FakeStore API dependency
+- Outdated glassmorphism and gradient styling
+
+## [0.1.0] - Initial
 
 ### Added
-- Basic product listing from FakeStore API
-- Simple product detail pages
-- Basic favorites functionality
-- Responsive grid layout
-- Navigation between pages
 
----
-
-## Future Roadmap
-
-### Planned Features
-- 🔐 **User Authentication**: Login/register system
-- 📝 **Product Reviews**: User reviews and ratings
-- 💳 **Payment Integration**: Checkout process
-- 📧 **Email Notifications**: Order confirmations
-- 🎯 **Product Recommendations**: AI-powered suggestions
-- 📊 **Analytics Dashboard**: User behavior tracking
-- 🌍 **Multi-language Support**: Internationalization
-- 📱 **PWA Features**: Offline support and push notifications
-- 🎨 **Theme Customization**: User-defined color schemes
-- 📈 **Admin Dashboard**: Product management interface
-
-### Technical Improvements
-- 🧪 **Testing Suite**: Comprehensive unit and integration tests
-- 📊 **Performance Monitoring**: Real-time performance metrics
-- 🔒 **Security Enhancements**: XSS protection and secure headers
-- 📱 **Mobile App**: React Native version
-- 🚀 **CDN Integration**: Optimized asset delivery
-- 🔄 **Real-time Updates**: WebSocket integration
+- Basic React + Vite scaffold
+- Product listing from FakeStore API
+- Simple cart and favorites
