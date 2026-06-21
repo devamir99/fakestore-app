@@ -5,6 +5,7 @@ import { formatCategory } from '../config/brand';
 import CheckoutSteps from '../components/CheckoutSteps';
 import DemoModal from '../components/DemoModal';
 import Breadcrumb from '../components/Breadcrumb';
+import ProductImage from '../components/ProductImage';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 const emptyShipping = {
@@ -174,7 +175,7 @@ const Checkout = () => {
                                             className="flex items-center gap-4 pb-4 border-b border-[var(--border)] last:border-0 last:pb-0"
                                         >
                                             <div className="w-16 h-16 bg-cream-dark dark:bg-espresso rounded-lg flex items-center justify-center p-2 shrink-0">
-                                                <img
+                                                <ProductImage
                                                     src={item.image}
                                                     alt={item.title}
                                                     className="max-h-full max-w-full object-contain"
