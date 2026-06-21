@@ -1,19 +1,17 @@
-import React from 'react';
-
 const Loader = () => {
     return (
         <div className="flex justify-center items-center h-64">
-            <div className="glass-card dark:glass-card-dark rounded-xl p-8 flex flex-col items-center">
+            <div className="surface-card rounded-xl p-8 flex flex-col items-center">
                 <div className="relative">
-                    <div className="animate-spin rounded-full h-16 w-16 border-4 border-gray-200 dark:border-gray-700"></div>
-                    <div className="animate-spin rounded-full h-16 w-16 border-4 border-blue-500 border-t-transparent absolute top-0 left-0"></div>
+                    <div className="animate-spin rounded-full h-12 w-12 border-2 border-cream-dark dark:border-espresso-light" />
+                    <div className="animate-spin rounded-full h-12 w-12 border-2 border-coffee dark:border-latte border-t-transparent absolute top-0 left-0" />
                 </div>
-                <p className="mt-4 text-gray-600 dark:text-gray-400 font-medium">
-                    Loading products...
+                <p className="mt-4 text-sm text-stone-muted dark:text-latte/60">
+                    Loading collection...
                 </p>
             </div>
         </div>
     );
-}
+};
 
 export default Loader;
