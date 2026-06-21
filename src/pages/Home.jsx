@@ -5,9 +5,12 @@ import { brand, formatCategory } from '../config/brand';
 import ProductList from '../components/ProductList';
 import ProductFilter from '../components/ProductFilter';
 import ContactCTA from '../components/ContactCTA';
+import TrustSection from '../components/TrustSection';
 import Loader from '../components/Loader';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const Home = () => {
+    usePageMeta();
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -140,6 +143,8 @@ const Home = () => {
                     ))}
                 </div>
             </section>
+
+            <TrustSection />
 
             <section id="catalog" className="scroll-mt-24">
                 <div className="flex flex-wrap gap-2 mb-8">
