@@ -17,8 +17,11 @@ export const usePageMeta = ({ title, description } = {}) => {
     useEffect(() => {
         const pageTitle = title ? `${title} · devamir` : brand.seo.defaultTitle;
         const pageDescription = description ?? brand.seo.defaultDescription;
-        const origin = brand.seo.siteUrl || window.location.origin;
-        const imageUrl = `${origin}/og-cover.svg`;
+        const siteUrl = (
+            brand.seo.siteUrl ||
+            `${window.location.origin}${import.meta.env.BASE_URL}`
+        ).replace(/\/$/, '');
+        const imageUrl = `${siteUrl}/og-cover.svg`;
 
         document.title = pageTitle;
 
