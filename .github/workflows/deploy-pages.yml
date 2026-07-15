@@ -14,9 +14,13 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+# Single job avoids stale cross-job artifacts after Re-run all jobs.
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,9 +42,7 @@ jobs:
       - name: SPA fallback for GitHub Pages
         run: cp dist/index.html dist/404.html
 
-      # Re-run of the same workflow can leave a duplicate "github-pages" artifact
-      # and then actions/deploy-pages fails with "Artifact count is 2".
-      - name: Remove stale github-pages artifact
+      - name: Remove stale github-pages artifacts
         uses: geekyeggo/delete-artifact@v5
         with:
           name: github-pages
@@ -51,13 +53,6 @@ jobs:
         with:
           path: dist
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
