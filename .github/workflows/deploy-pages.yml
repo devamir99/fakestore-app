@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
@@ -37,6 +37,14 @@ jobs:
 
       - name: SPA fallback for GitHub Pages
         run: cp dist/index.html dist/404.html
+
+      # Re-run of the same workflow can leave a duplicate "github-pages" artifact
+      # and then actions/deploy-pages fails with "Artifact count is 2".
+      - name: Remove stale github-pages artifact
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: github-pages
+          failOnError: false
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
