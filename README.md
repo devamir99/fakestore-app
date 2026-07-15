@@ -2,7 +2,7 @@
 
 A minimal, responsive e-commerce storefront built with React and Vite. Designed as a live portfolio demo by **Amir Fallahi** — browse products, save favourites, manage a cart, and walk through a three-step checkout flow.
 
-**Live demo:** deploy with Vercel (see below) and set `VITE_SITE_URL` for social previews.
+**Live demo:** [devamir99.github.io/fakestore-app](https://devamir99.github.io/fakestore-app)
 
 ## Screenshots
 
@@ -87,17 +87,16 @@ Copy `env.example` to `.env` and optionally set:
 | `npm run preview` | Preview production build locally |
 | `npm run lint` | Run ESLint |
 
-## Deploy to Vercel
+## Deploy to GitHub Pages
 
-1. Push the repo to GitHub
-2. Import the project at [vercel.com](https://vercel.com)
-3. Set `VITE_SITE_URL` to your deployment URL
-4. Deploy — `vercel.json` handles client-side routing
+This project is configured for GitHub Pages via GitHub Actions (`.github/workflows/deploy-pages.yml`).
 
-```bash
-npm i -g vercel
-vercel
-```
+1. Push to the `main` branch (or run the workflow manually)
+2. In the repo: **Settings → Pages → Source → GitHub Actions**
+3. After the workflow succeeds, open:  
+   [https://devamir99.github.io/fakestore-app](https://devamir99.github.io/fakestore-app)
+
+Vite `base` is set to `/fakestore-app/` for project-site hosting. The build also copies `index.html` → `404.html` so SPA routes work on refresh.
 
 ## Custom builds
 
