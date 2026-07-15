@@ -28,7 +28,7 @@ function App() {
                 <FavoritesProvider>
                     <ToastProvider>
                         <ErrorBoundary>
-                            <Router>
+                            <Router basename={import.meta.env.BASE_URL}>
                                 <SkipLink />
                                 <ScrollToTop />
                                 <div className="min-h-screen flex flex-col bg-page transition-colors duration-300">
